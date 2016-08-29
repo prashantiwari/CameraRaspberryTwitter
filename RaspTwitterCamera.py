@@ -13,13 +13,6 @@ OAUTH_TOKEN_SECRET = 'ujwt9LxRfmJ1oB24WW8lZGFmX6eUwuxPND46RdM9VGeJX'
 TERM = '#TakePicture'
 FOLLOW = '2851590678'
 
-timeasofnow = str(datetime.now())
-timeasofnow = timeasofnow.replace(":", "_")
-timeasofnow = timeasofnow.replace("-","_")
-picturelocation = /Home/pi/PicturesByRasp/image
-picturelocation = picturelocation + timeasofnow
-
-
 
 mycamera = PiCamera()
 
@@ -36,10 +29,10 @@ class BotStreamer(TwythonStreamer):
                         picturelocation = /Home/pi/PicturesByRasp/image
                         picturelocation = picturelocation + timeasofnow
 
-                        camera.start_preview()
+                        mycamera.start_preview()
                         sleep(5)
-                        camera.capture('picturelocation')
-                        camera.stop_preview()
+                        mycamera.capture('picturelocation')
+                        mycamera.stop_preview()
                         
                         
 
